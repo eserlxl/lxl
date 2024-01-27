@@ -17,14 +17,6 @@ find_package(Boost REQUIRED COMPONENTS iostreams)
 include_directories(${Boost_INCLUDE_DIRS})
 
 include_directories(include)
-include_directories(include/algo)
-include_directories(include/algo/crypto)
-include_directories(include/algo/sort)
-include_directories(include/algo/string)
-include_directories(include/compression)
-include_directories(include/math)
-include_directories(include/utils)
-include_directories(include/vector)
 
 add_library(lxl SHARED
         include/algo/crypto/hash.h
@@ -34,7 +26,7 @@ add_library(lxl SHARED
         include/algo/sort/timSort.h
         include/algo/string/case.h
         include/algo/string/explode.h
-        include/algo/string/cmath.h
+        include/algo/string/math.h
         include/algo/string/trim.h
         include/algo/compare.h
         include/algo/crypto.h
@@ -42,7 +34,7 @@ add_library(lxl SHARED
         include/algo/noise.h
         include/algo/size.h
         include/algo/sort.h
-        include/algo/cstring.h
+        include/algo/string.h
         include/algo/swap.h
         include/compression/bzip2.h
         include/compression/gzip.h
@@ -52,6 +44,7 @@ add_library(lxl SHARED
         include/math/random.h
         include/math/statistics.h
         include/math/utils.h
+        include/math.h
         include/utils/delete.h
         include/utils/fetchData.h
         include/utils/print.h
@@ -71,7 +64,7 @@ add_library(lxl SHARED
         include/vector.h
         src/algo/string/case.cpp
         src/algo/string/explode.cpp
-        src/algo/string/cmath.cpp
+        src/algo/string/math.cpp
         src/algo/string/trim.cpp
         src/math/permutation.cpp
         src/math/statistics.cpp
