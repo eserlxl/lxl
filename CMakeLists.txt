@@ -66,8 +66,8 @@ add_library(lxl SHARED
         include/algo.h
         include/compression.h
         include/lxl.h
-        include/timer.h
-        include/type.h
+        include/utils/timer.h
+        include/utils/type.h
         include/utils.h
         include/vector.h
         src/algo/string/case.cpp
