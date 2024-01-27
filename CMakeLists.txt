@@ -1,10 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
 project(lxl DESCRIPTION "C++ Utility Library")
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fPIC -Ofast -I./include")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall -fPIC -O3 -march=native")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -fPIC -O0")
 
 set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
@@ -79,3 +82,9 @@ add_library(lxl SHARED
         src/utils/ctime.cpp)
 
 target_link_libraries(lxl ${Boost_LIBRARIES})
+
+# Change install prefix according to your system
+set(CMAKE_INSTALL_PREFIX /usr/)
+
+install(DIRECTORY include/. DESTINATION include/lxl)
+install(TARGETS lxl LIBRARY DESTINATION lib)
