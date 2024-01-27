@@ -5,7 +5,8 @@
 #include "utils/delete.h"
 #include "utils/fetchData.h"
 #include "utils/print.h"
-#include "utils/ctime.h"
+#include "utils/timer.h"
+#include "utils/type.h"
 
 namespace lxl {
     std::string shellExec(const char *cmd);

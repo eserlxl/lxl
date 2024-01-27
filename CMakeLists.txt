@@ -55,7 +55,6 @@ add_library(lxl SHARED
         include/utils/delete.h
         include/utils/fetchData.h
         include/utils/print.h
-        include/utils/ctime.h
         include/vector/copy.h
         include/vector/create.h
         include/vector/dimension.h
