@@ -5,7 +5,7 @@
 #include <limits>
 #include <ctgmath>
 #include "vector.h"
-#include "utils.h"
+#include "utils/type.h"
 
 namespace lxl {
     template<typename Float>

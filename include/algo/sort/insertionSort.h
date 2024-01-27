@@ -2,7 +2,7 @@
 #define lxl_ALGO_SORT_INSERTIONSORT_H_
 
 #include <vector>
-#include "utils.h"
+#include "utils/type.h"
 
 namespace lxl {
 // Sorts array from left index to right

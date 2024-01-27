@@ -4,7 +4,7 @@
 #include <iostream>
 #include <random>
 #include <chrono>
-#include "utils.h"
+#include "utils/type.h"
 #include "math/statistics.h"
 
 namespace lxl {

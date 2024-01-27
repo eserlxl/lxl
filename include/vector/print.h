@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include "utils.h"
+#include "utils/type.h"
 #include "vector/dimension.h"
 #include "vector/size.h"
 #include "algo/compare.h"

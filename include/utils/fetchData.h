@@ -7,9 +7,8 @@
 #include <boost/iostreams/filtering_streambuf.hpp>
 #include <boost/iostreams/copy.hpp>
 #include <boost/iostreams/filter/gzip.hpp>
-#include "utils.h"
+#include "utils/type.h"
 #include "algo.h"
-#include "vector.h"
 
 namespace lxl {
     template<typename T1, typename T2>

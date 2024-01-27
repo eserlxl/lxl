@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include "utils.h"
+#include "utils/type.h"
 
 namespace lxl {
     template<class A>

@@ -2,7 +2,7 @@
 #define lxl_VECTOR_DIMENSION_H_
 
 #include <vector>
-#include "utils.h"
+#include "utils/type.h"
 
 namespace lxl {
 // Supports up to 5 dimension for now!

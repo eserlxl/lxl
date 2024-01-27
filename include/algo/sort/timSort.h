@@ -4,7 +4,7 @@
 #include <vector>
 #include "algo/sort/selectionSort.h"
 #include "algo/sort/mergeSort.h"
-#include "utils.h"
+#include "utils/type.h"
 
 namespace lxl {
 // iterative Timsort function to sort the

@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <vector>
-#include "utils.h"
+#include "utils/type.h"
 
 namespace lxl {
 /* print a list of ints */

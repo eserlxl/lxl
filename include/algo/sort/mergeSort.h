@@ -2,7 +2,7 @@
 #define lxl_ALGO_SORT_MERGESORT_H_
 
 #include <vector>
-#include "utils.h"
+#include "utils/type.h"
 
 namespace lxl {
     template<typename T>

@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "utils.h"
+#include "utils/type.h"
 
 namespace lxl {
     template<typename T>
