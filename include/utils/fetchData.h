@@ -11,6 +11,38 @@
 #include "algo.h"
 
 namespace lxl {
+    template<typename T> void detectDelimiter(const std::string &fileName,T* delimiterDetected) {
+
+        std::vector<std::string> delimiterArray = {" ",",","\t",";","|",":","_"};
+        std::vector<uzi> delimiterArrayPoints(delimiterArray.size());
+
+        std::ifstream f;
+
+        try {
+            f.open(fileName);
+        } catch (std::system_error &e) {
+            std::cerr << e.code().message() << std::endl;
+        }
+
+        if (f.is_open()) {
+            std::string line;
+            while (getline(f, line)) {
+                uzi i=0;
+                for(auto &delimiter:delimiterArray)
+                {
+                    delimiterArrayPoints[i++]+=explode(delimiter, trim_copy(line)).size();
+                }
+            }
+            f.close();
+
+            *delimiterDetected = delimiterArray[max(delimiterArrayPoints)[1]];
+        } else {
+            throw std::system_error(errno, std::system_category(), "Failed to open " + fileName);
+        }
+
+        f.clear();
+    }
+
     template<typename T1, typename T2>
     void fetchData(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
         std::ifstream f;
