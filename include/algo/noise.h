@@ -10,7 +10,7 @@ namespace lxl {
     class noise {
     public:
         explicit noise(uzi seed = 2020, uzi randomVectorSize = 10, long double noisePower = 1) {
-            auto *random = new lxlRandom();
+            auto *random = new Random();
             random->init(seed);
             for (uzi i = 0; i < std::max(randomVectorSize, (uzi) 2); i++) {
                 r.push_back(random->generate());

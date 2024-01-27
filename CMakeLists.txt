@@ -44,6 +44,11 @@ add_library(lxl SHARED
         include/compression/bzip2.h
         include/compression/gzip.h
         include/math/logic.h
+        include/math/combination.h
+        include/math/permutation.h
+        include/math/random.h
+        include/math/statistics.h
+        include/math/utils.h
         include/utils/delete.h
         include/utils/fetchData.h
         include/utils/print.h
@@ -66,6 +71,9 @@ add_library(lxl SHARED
         src/algo/string/explode.cpp
         src/algo/string/cmath.cpp
         src/algo/string/trim.cpp
+        src/math/permutation.cpp
+        src/math/statistics.cpp
+        src/math/utils.cpp
         src/utils/shellExec.cpp
         src/utils/sleep.cpp
         src/utils/ctime.cpp)
