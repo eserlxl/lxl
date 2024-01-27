@@ -1,9 +1,6 @@
 #include <iostream>
-#include <fstream>
 #include <cmath>
 #include <string>
-#include "algo.h"
-#include "math.h"
 #include "utils.h"
 
 namespace lxl {

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include "type.h"
+#include "utils.h"
 
 namespace lxl {
 // 2-D

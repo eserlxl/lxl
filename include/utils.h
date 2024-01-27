@@ -2,11 +2,11 @@
 #define lxl_UTILS_H_
 
 #include <string>
+#include "utils/type.h"
 #include "utils/delete.h"
 #include "utils/fetchData.h"
 #include "utils/print.h"
 #include "utils/timer.h"
-#include "utils/type.h"
 
 namespace lxl {
     std::string shellExec(const char *cmd);

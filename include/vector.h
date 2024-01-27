@@ -1,7 +1,7 @@
 #ifndef lxl_VECTOR_H_
 #define lxl_VECTOR_H_
 
-#include "type.h"
+#include "utils.h"
 #include "vector/create.h"
 #include "vector/copy.h"
 #include "vector/cmath.h"

@@ -2,7 +2,7 @@
 #define LXL_NN_LOGIC_H
 
 #include <cmath>
-#include "type.h"
+#include "utils.h"
 
 namespace lxl {
 /**
