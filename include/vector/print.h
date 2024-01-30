@@ -73,7 +73,7 @@ namespace lxl {
 
 // dimension count, dimension-1 size,dimension-2 size,..., info
     template<class A, typename S>
-    void printInfoSize(A v, const std::string &text = "", S &streamBuf = std::cout) {
+    void printSize(A v, const std::string &text = "", S &streamBuf = std::cout) {
         std::string temp;
 
         std::vector<uzi> tempVec = sizeVec(v);
@@ -86,11 +86,11 @@ namespace lxl {
     }
 
     template<class A, typename S>
-    void printInfo(A v, const std::string &text, uzi precision = 6, S &streamBuf = std::cout) {
+    void print(A v, const std::string &text, uzi precision = 6, S &streamBuf = std::cout) {
         if (v.empty()) {
             streamBuf << "0 " + text << std::endl;
         } else {
-            printInfoSize(v, text, streamBuf);
+            printSize(v, text, streamBuf);
             print(v, precision, streamBuf);
         }
     }
