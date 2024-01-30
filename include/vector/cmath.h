@@ -5,6 +5,7 @@
 #include <limits>
 #include <ctgmath>
 #include "vector.h"
+#include "math/utils.h"
 #include "utils/type.h"
 
 namespace lxl {
@@ -311,23 +312,23 @@ namespace lxl {
     }
 
     template<typename T>
-    std::vector<T> round(std::vector<T> &source, int n) {
+    std::vector<T> round(std::vector<T> &source, T n) {
         std::vector<T> target;
         target.resize(source.size());
 
         for (unsigned int i = 0; i < source.size(); i++) {
-            target[i] = std::round(source[i], n);
+            target[i] = round(source[i], n);
         }
 
         return target;
     }
 
     template<typename T>
-    std::vector<std::vector<T>> round(std::vector<std::vector<T>> &source, int n) {
+    std::vector<std::vector<T>> round(std::vector<std::vector<T>> &source, T n) {
         std::vector<std::vector<T>> target;
 
         for (unsigned int i = 0; i < source.size(); i++) {
-            target.push_back(std::round(source[i]), n);
+            target.push_back(round(source[i]), n);
         }
 
         return target;

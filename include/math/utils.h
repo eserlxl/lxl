@@ -92,7 +92,7 @@ namespace lxl {
 
         const T shift = powl(10.l, decimalPlaces);
 
-        return round(value * shift) / shift;
+        return std::round(value * shift) / shift;
     }
 
     template<class T>
