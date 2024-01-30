@@ -8,7 +8,7 @@ namespace lxl {
     typedef std::chrono::high_resolution_clock::time_point timer;
 
     class Timer {
-        timer T;
+        timer T = std::chrono::high_resolution_clock::now();
 
     public:
         explicit Timer() {
