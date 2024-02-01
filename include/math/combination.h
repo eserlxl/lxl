@@ -26,7 +26,7 @@ namespace lxl {
 
     template<typename T>
     void combine(std::vector<T> a, std::vector<std::vector<T>> &y) {
-        std::vector<uzi> p;
+        matrixUzi1D p;
         for (uzi i = 0; i < a.size(); i++) {
             p.push_back(1);
             combination(a, p, 0, y);

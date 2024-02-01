@@ -35,7 +35,7 @@ namespace lxl {
 // Fibonacci Space
     long double fibonacciSpace(long double x) {
         long double goldenRatio;
-        std::vector<long double> fibonacci;
+        matrixLongDouble1D fibonacci;
         goldenRatio = 0.61803398875;
         //fibonacci = [ 0, 0.013150, 0.021290, 0.034440, 0.055729, 0.090169, 0.14590, 0.23607, 0.38197, 0.61803 ];
 

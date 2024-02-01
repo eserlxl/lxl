@@ -10,15 +10,15 @@ namespace lxl {
         return (x == 1 ? x : x * factorial(x - 1));
     }
 
-    int show(std::vector<uzi> x, uzi len);
+    int show(matrixUzi1D x, uzi len);
 
-    void perm1(std::vector<uzi> x, uzi n, int callback(std::vector<uzi>, uzi));
+    void perm1(matrixUzi1D x, uzi n, int callback(matrixUzi1D, uzi));
 
-    void perm2(std::vector<uzi> x, uzi n, int callback(std::vector<uzi>, uzi));
+    void perm2(matrixUzi1D x, uzi n, int callback(matrixUzi1D, uzi));
 
-    void perm3(std::vector<uzi> x, uzi n, int callback(std::vector<uzi>, uzi));
+    void perm3(matrixUzi1D x, uzi n, int callback(matrixUzi1D, uzi));
 
-    void perm(std::vector<uzi> x, uzi n, std::vector<std::vector<uzi>> &y);
+    void perm(matrixUzi1D x, uzi n, matrixUzi2D &y);
 }
 
 #endif /* lxl_MATH_PERMUTATION_H_ */

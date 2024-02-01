@@ -6,14 +6,14 @@
 
 namespace lxl {
 /* print a list of ints */
-    int show(std::vector<uzi> x, uzi len) {
+    int show(matrixUzi1D x, uzi len) {
         for (uzi i = 0; i < len; i++)
             std::cout << x[i] << (i == len - 1 ? '\n' : ' ');
         return 1;
     }
 
 /* next lexicographical permutation */
-    int next_lex_perm(std::vector<uzi> a, uzi n) {
+    int next_lex_perm(matrixUzi1D a, uzi n) {
 #	define swap(i, j) {t = a[i]; a[i] = a[j]; a[j] = t;}
         int k, l, t;
 
@@ -35,14 +35,14 @@ namespace lxl {
 #	undef swap
     }
 
-    void perm1(std::vector<uzi> x, uzi n, uzi callback(std::vector<uzi>, uzi)) {
+    void perm1(matrixUzi1D x, uzi n, uzi callback(matrixUzi1D, uzi)) {
         do {
             if (callback) callback(x, n);
         } while (next_lex_perm(x, n));
     }
 
 /* Boothroyd method; exactly N! swaps, about as fast as it gets */
-    void boothroyd(std::vector<uzi> x, uzi n, uzi nn, uzi callback(std::vector<uzi>, uzi)) {
+    void boothroyd(matrixUzi1D x, uzi n, uzi nn, uzi callback(matrixUzi1D, uzi)) {
         uzi c = 0, i, t;
         while (true) {
             if (n > 2) boothroyd(x, n - 1, nn, callback);
@@ -56,12 +56,12 @@ namespace lxl {
     }
 
 /* entry for Boothroyd method */
-    void perm2(std::vector<uzi> x, uzi n, uzi callback(std::vector<uzi>, uzi)) {
+    void perm2(matrixUzi1D x, uzi n, uzi callback(matrixUzi1D, uzi)) {
         if (callback) callback(x, n);
         boothroyd(x, n, n, callback);
     }
 
-    void boothroyd(std::vector<uzi> x, uzi n, std::vector<std::vector<uzi>> &y) {
+    void boothroyd(matrixUzi1D x, uzi n, matrixUzi2D &y) {
         uzi c = 0, i, t;
         while (true) {
             if (n > 2) boothroyd(x, n - 1, y);
@@ -76,16 +76,16 @@ namespace lxl {
     }
 
 /* entry for Boothroyd method */
-    void perm(std::vector<uzi> x, uzi n, std::vector<std::vector<uzi>> &y) {
+    void perm(matrixUzi1D x, uzi n, matrixUzi2D &y) {
         boothroyd(x, n, y);
     }
 
 /* same as perm2, but flattened recursions into iterations */
-    void perm3(std::vector<uzi> x, uzi n, uzi callback(std::vector<uzi>, uzi)) {
+    void perm3(matrixUzi1D x, uzi n, uzi callback(matrixUzi1D, uzi)) {
         /* calloc isn't strictly necessary, int c[32] would suffice
            for most practical purposes */
         uzi d, i, t;
-        std::vector<uzi> c(n);
+        matrixUzi1D c(n);
 
         /* curiously, with GCC 4.6.1 -O3, removing next line makes
            it ~25% slower */

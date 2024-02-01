@@ -13,7 +13,7 @@ namespace lxl {
     template<typename T> std::string roundStr(T x, uzi decimalPlaces)
     {
         std::string text = std::to_string(x);
-        std::vector<std::string> textArray = explode(".",text);
+        matrixString1D textArray = explode(".",text);
         return textArray[0]+"."+textArray[1].substr(0,decimalPlaces);
     }
 }

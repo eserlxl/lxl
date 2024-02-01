@@ -22,7 +22,7 @@ namespace lxl {
 
         long double eval(long double x) {
 
-            std::vector<long double> tempVec;
+            matrixLongDouble1D tempVec;
             for (uzi i = 0; i < r.size() - 1; i++) {
                 long double u = powl(x, noisePower);
                 tempVec.push_back((1. - x) * r[i] * u + (1 - u) * r[i + 1]);
@@ -35,7 +35,7 @@ namespace lxl {
 
         ~noise() = default;
 
-        std::vector<long double> r;
+        matrixLongDouble1D r;
         long double noisePower;
     };
 }

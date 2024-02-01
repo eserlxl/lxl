@@ -13,8 +13,8 @@
 namespace lxl {
     template<typename T> void detectDelimiter(const std::string &fileName,T* delimiterDetected) {
 
-        std::vector<std::string> delimiterArray = {" ",",","\t",";","|",":","_"};
-        std::vector<uzi> delimiterArrayPoints(delimiterArray.size());
+        matrixString1D delimiterArray = {" ",",","\t",";","|",":","_"};
+        matrixUzi1D delimiterArrayPoints(delimiterArray.size());
 
         std::ifstream f;
 
@@ -56,7 +56,7 @@ namespace lxl {
         if (f.is_open()) {
             std::string line;
             while (getline(f, line)) {
-                std::vector<std::string> stringData = explode(delimiter, trim_copy(line));
+                matrixString1D stringData = explode(delimiter, trim_copy(line));
                 std::vector<T1> tempVec;
                 convert(stringData, tempVec);
                 data.push_back(tempVec);
@@ -85,7 +85,7 @@ namespace lxl {
 
             std::string line;
             while (getline(instream, line)) {
-                std::vector<std::string> stringData = explode(delimiter, trim_copy(line));
+                matrixString1D stringData = explode(delimiter, trim_copy(line));
                 std::vector<T1> tempVec;
                 convert(stringData, tempVec);
                 data.push_back(tempVec);
@@ -114,7 +114,7 @@ namespace lxl {
 
             uzi lineCount = 0;
             while (getline(f, line)) {
-                std::vector<std::string> stringData = explode(delimiter, trim_copy(line));
+                matrixString1D stringData = explode(delimiter, trim_copy(line));
 
                 if (lineCount == 0) {
                     std::vector<T1> tempVec;
@@ -151,7 +151,7 @@ namespace lxl {
             std::string line;
             uzi lineCount = 0;
             while (getline(instream, line)) {
-                std::vector<std::string> stringData = explode(delimiter, trim_copy(line));
+                matrixString1D stringData = explode(delimiter, trim_copy(line));
 
                 if (lineCount == 0) {
                     std::vector<T1> tempVec;

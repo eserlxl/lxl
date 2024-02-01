@@ -76,7 +76,7 @@ namespace lxl {
     void printSize(A v, const std::string &text = "", S &streamBuf = std::cout) {
         std::string temp;
 
-        std::vector<uzi> tempVec = sizeVec(v);
+        matrixUzi1D tempVec = sizeVec(v);
 
         uzi d = dimension(v);
         for (uzi i = 0; i < d; i++) {

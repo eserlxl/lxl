@@ -8,8 +8,8 @@ namespace lxl {
 // Supports up to 5 dimension for now!
 
     template<typename T>
-    std::vector<uzi> sizeVec(std::vector<T> &v) {
-        std::vector<uzi> sizeVec;
+    matrixUzi1D sizeVec(std::vector<T> &v) {
+        matrixUzi1D sizeVec;
 
         sizeVec.push_back(v.size());
 
@@ -17,8 +17,8 @@ namespace lxl {
     }
 
     template<typename T>
-    std::vector<uzi> sizeVec(std::vector<std::vector<T>> &v) {
-        std::vector<uzi> sizeVec;
+    matrixUzi1D sizeVec(std::vector<std::vector<T>> &v) {
+        matrixUzi1D sizeVec;
 
         sizeVec.push_back(v.size());
         sizeVec.push_back(v[0].size());
@@ -27,8 +27,8 @@ namespace lxl {
     }
 
     template<typename T>
-    std::vector<uzi> sizeVec(std::vector<std::vector<std::vector<T>>> &v) {
-        std::vector<uzi> sizeVec;
+    matrixUzi1D sizeVec(std::vector<std::vector<std::vector<T>>> &v) {
+        matrixUzi1D sizeVec;
 
         sizeVec.push_back(v.size());
         sizeVec.push_back(v[0].size());
@@ -38,8 +38,8 @@ namespace lxl {
     }
 
     template<typename T>
-    std::vector<uzi> sizeVec(std::vector<std::vector<std::vector<std::vector<T>>>> &v) {
-        std::vector<uzi> sizeVec;
+    matrixUzi1D sizeVec(std::vector<std::vector<std::vector<std::vector<T>>>> &v) {
+        matrixUzi1D sizeVec;
 
         sizeVec.push_back(v.size());
         sizeVec.push_back(v[0].size());
@@ -50,8 +50,8 @@ namespace lxl {
     }
 
     template<typename T>
-    std::vector<uzi> sizeVec(std::vector<std::vector<std::vector<std::vector<std::vector<T>>>>> &v) {
-        std::vector<uzi> sizeVec;
+    matrixUzi1D sizeVec(std::vector<std::vector<std::vector<std::vector<std::vector<T>>>>> &v) {
+        matrixUzi1D sizeVec;
 
         sizeVec.push_back(v.size());
         sizeVec.push_back(v[0].size());
@@ -63,7 +63,7 @@ namespace lxl {
     }
 
     template<class A>
-    std::vector<uzi> sizeVec(const A &v) {
+    matrixUzi1D sizeVec(const A &v) {
         return sizeVec(v);
     }
 }

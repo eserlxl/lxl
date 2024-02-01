@@ -4,8 +4,8 @@
 #include "utils.h"
 
 namespace lxl {
-    std::vector<std::string> explode(const std::string &delimiter, const std::string &str) {
-        std::vector<std::string> arr;
+    matrixString1D explode(const std::string &delimiter, const std::string &str) {
+        matrixString1D arr;
 
         uzi strleng = str.length();
         uzi delleng = delimiter.length();
@@ -31,8 +31,8 @@ namespace lxl {
         return arr;
     }
 
-    std::vector<std::string> explode(char delim, std::string const &s) {
-        std::vector<std::string> result;
+    matrixString1D explode(char delim, std::string const &s) {
+        matrixString1D result;
         std::istringstream iss(s);
 
         for (std::string token; std::getline(iss, token, delim);) {

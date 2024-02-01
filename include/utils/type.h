@@ -9,6 +9,24 @@
 namespace lxl {
     typedef std::size_t uzi;
 
+    typedef std::vector<std::string> matrixString1D;
+    typedef std::vector<matrixString1D> matrixString2D;
+
+    typedef std::vector<uzi> matrixUzi1D;
+    typedef std::vector<matrixUzi1D> matrixUzi2D;
+
+    typedef std::vector<int> matrixInt1D;
+    typedef std::vector<matrixInt1D> matrixInt2D;
+
+    typedef std::vector<float> matrixFloat1D;
+    typedef std::vector<matrixFloat1D> matrixFloat2D;
+
+    typedef std::vector<double> matrixDouble1D;
+    typedef std::vector<matrixDouble1D> matrixDouble2D;
+
+    typedef std::vector<long double> matrixLongDouble1D;
+    typedef std::vector<matrixLongDouble1D> matrixLongDouble2D;
+
     template<class A>
     std::string type(const A &) {
         typedef typename std::remove_all_extents<A>::type Type;
