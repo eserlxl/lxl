@@ -106,6 +106,20 @@ namespace lxl {
     }
 
     template<typename Float>
+    std::vector<std::vector<Float>> mul(std::vector<std::vector<Float>> &array, Float x) {
+        std::vector<std::vector<Float>> result(array.size());
+
+        for (uzi i = 0; i < array.size(); i++) {
+            result[i].resize(array[i].size());
+            for (uzi j = 0; j < array[i].size(); j++) {
+                result[i][j] = array[i][j] * x;
+            }
+        }
+
+        return result;
+    }
+
+    template<typename Float>
     std::vector<Float> mul(std::vector<Float> &array, Float x) {
         std::vector<Float> result(array.size());
 

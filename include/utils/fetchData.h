@@ -11,9 +11,10 @@
 #include "algo.h"
 
 namespace lxl {
-    template<typename T> void detectDelimiter(const std::string &fileName,T* delimiterDetected) {
+    template<typename T>
+    void detectDelimiter(const std::string &fileName, T *delimiterDetected) {
 
-        matrixString1D delimiterArray = {" ",",","\t",";","|",":","_"};
+        matrixString1D delimiterArray = {" ", ",", "\t", ";", "|", ":", "_"};
         matrixUzi1D delimiterArrayPoints(delimiterArray.size());
 
         std::ifstream f;
@@ -27,10 +28,9 @@ namespace lxl {
         if (f.is_open()) {
             std::string line;
             while (getline(f, line)) {
-                uzi i=0;
-                for(auto &delimiter:delimiterArray)
-                {
-                    delimiterArrayPoints[i++]+=explode(delimiter, trim_copy(line)).size();
+                uzi i = 0;
+                for (auto &delimiter:delimiterArray) {
+                    delimiterArrayPoints[i++] += explode(delimiter, trim_copy(line)).size();
                 }
             }
             f.close();
