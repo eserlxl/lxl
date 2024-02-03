@@ -6,6 +6,7 @@
 #include "math/statistics.h"
 #include "math/permutation.h"
 #include "math/random.h"
+#include "math/binom.h"
 #include "math/utils.h"
 
 #endif // lxl_MATH_H_

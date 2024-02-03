@@ -38,8 +38,9 @@ add_library(lxl SHARED
         include/algo/swap.h
         include/compression/bzip2.h
         include/compression/gzip.h
-        include/math/logic.h
+        include/math/binom.h
         include/math/combination.h
+        include/math/logic.h
         include/math/permutation.h
         include/math/random.h
         include/math/statistics.h
@@ -66,6 +67,7 @@ add_library(lxl SHARED
         src/algo/string/explode.cpp
         src/algo/string/math.cpp
         src/algo/string/trim.cpp
+        src/math/binom.cpp
         src/math/permutation.cpp
         src/math/statistics.cpp
         src/math/utils.cpp
