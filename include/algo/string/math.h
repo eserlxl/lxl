@@ -14,10 +14,9 @@ namespace lxl {
     std::string roundStr(T x, uzi decimalPlaces) {
         std::string text = std::to_string(x);
         matrixString1D textArray = explode(".", text);
-        if(decimalPlaces>0){
+        if (decimalPlaces > 0) {
             return textArray[0] + "." + textArray[1].substr(0, decimalPlaces);
-        }
-        else {
+        } else {
             return textArray[0];
         }
     }
