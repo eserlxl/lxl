@@ -27,4 +27,21 @@ namespace lxl {
         }
         return hayyamTriangle;
     }
+
+    matrixUzi2D binom(uzi size) {
+        matrixUzi2D hayyam;
+        hayyam.resize(0, matrixUzi1D(0));
+        hayyam.resize(size * 2, matrixUzi1D(size * 2));
+
+        hayyam[0][0] = 1;
+        for (uzi i = 0; i <= size; i++) {
+            hayyam[i][0] = 1;
+            for (uzi j = 0; j <= i; j++) {
+                if (j > 0 && i > 0) {
+                    hayyam[i][j] = hayyam[i - 1][j - 1] + hayyam[i - 1][j];
+                }
+            }
+        }
+        return hayyam;
+    }
 }

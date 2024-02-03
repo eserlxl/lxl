@@ -34,6 +34,8 @@ namespace lxl {
         }
     }
 
+    matrixUzi2D binom(uzi size);
+
     std::string binomTriangle(uzi size);
 }
 #endif //lxl_MATH_BINOM_H
