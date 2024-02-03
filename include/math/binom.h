@@ -1,5 +1,5 @@
-#ifndef LXL_BINOM_H
-#define LXL_BINOM_H
+#ifndef lxl_MATH_BINOM_H
+#define lxl_MATH_BINOM_H
 
 #include <iostream>
 #include <cmath>
@@ -36,4 +36,4 @@ namespace lxl {
 
     std::string binomTriangle(uzi size);
 }
-#endif //LXL_BINOM_H
+#endif //lxl_MATH_BINOM_H
