@@ -19,23 +19,21 @@
  */
 namespace lxl {
     template<typename T>
-    void binom(uzi size, std::vector<std::vector<T>> &hayyam) {
-        hayyam.resize(0, std::vector<T>(0));
-        hayyam.resize(size * 2, std::vector<T>(size * 2));
+    void binom(uzi index, std::vector<std::vector<T>> &hayyam) {
+        hayyam.resize(index+1);
 
-        hayyam[0][0] = 1;
-        for (uzi i = 0; i <= size; i++) {
+        for (uzi i = 0; i <= index; i++) {
+            hayyam[i].resize(i+1);
             hayyam[i][0] = 1;
-            for (uzi j = 0; j <= i; j++) {
-                if (j > 0 && i > 0) {
-                    hayyam[i][j] = hayyam[i - 1][j - 1] + hayyam[i - 1][j];
-                }
+            for (uzi j = 1; j < i; j++) {
+                hayyam[i][j] = hayyam[i-1][j - 1] + hayyam[i-1][j];
             }
+            hayyam[i][i] = 1;
         }
     }
 
-    matrixUzi2D binom(uzi size);
+    matrixUzi2D binom(uzi index);
 
-    std::string binomTriangle(uzi size);
+    std::string binomTriangle(uzi index);
 }
 #endif //lxl_MATH_BINOM_H
