@@ -20,13 +20,13 @@
 namespace lxl {
     template<typename T>
     void binom(uzi index, std::vector<std::vector<T>> &hayyam) {
-        hayyam.resize(index+1);
+        hayyam.resize(index + 1);
 
         for (uzi i = 0; i <= index; i++) {
-            hayyam[i].resize(i+1);
+            hayyam[i].resize(i + 1);
             hayyam[i][0] = 1;
             for (uzi j = 1; j < i; j++) {
-                hayyam[i][j] = hayyam[i-1][j - 1] + hayyam[i-1][j];
+                hayyam[i][j] = hayyam[i - 1][j - 1] + hayyam[i - 1][j];
             }
             hayyam[i][i] = 1;
         }
