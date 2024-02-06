@@ -13,31 +13,29 @@
 namespace lxl {
     template<class A>
     void zero(A &v) {
-        uzi size = v.size();
-        v.resize(0);
-        v.resize(size, 0);
+        v.resize(v.size(), (A) 0);
     }
 
     template<class A>
     void zero(A &v, uint size) {
-        v.resize(0);
-        v.resize(size, 0);
+        v.resize(size, (A) 0);
     }
 
     template<typename T>
     void zero(std::vector<T> &v) {
-        uzi size = v.size();
-        v.resize(0);
-        v.resize(size, 0);
+        v.resize(v.size(), (T) 0);
     }
 
     template<typename T>
     void zero(std::vector<std::vector<T>> &v) {
         for (uzi i = 0; i < v.size(); i++) {
-            uzi size = v[i].size();
-            v[i].resize(0);
-            v[i].resize(size, 0);
+            v[i].resize(v[i].size(), (T) 0);
         }
+    }
+
+    template<typename T>
+    void zero(std::vector<std::vector<T>> &v, uzi row, uzi col) {
+        v.resize(row, std::vector<T>(col, (T) 0));
     }
 
     template<class A>
@@ -57,9 +55,7 @@ namespace lxl {
     template<typename T>
     void fill(std::vector<std::vector<T>> &v, T x) {
         for (uzi i = 0; i < v.size(); i++) {
-            uzi size = v[i].size();
-            v[i].resize(0);
-            v[i].resize(size, x);
+            v[i].resize(v[i].size(), x);
         }
     }
 
@@ -70,12 +66,7 @@ namespace lxl {
 
     template<typename T>
     void resize(std::vector<std::vector<T>> &v, uzi sizeRow, uzi sizeCol) {
-        v.resize(0);
-        v.resize(sizeRow);
-        for (uzi i = 0; i < sizeRow; i++) {
-            v[i].resize(0);
-            v[i].resize(sizeCol, 0);
-        }
+        zero(v, sizeRow, sizeCol);
     }
 }
 
