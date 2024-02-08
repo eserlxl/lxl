@@ -1,5 +1,5 @@
-#ifndef lxl_UTILS_FETCHDATA_H
-#define lxl_UTILS_FETCHDATA_H
+#ifndef lxl_UTILS_LOAD_H
+#define lxl_UTILS_LOAD_H
 
 #include <iostream>
 #include <vector>
@@ -43,8 +43,37 @@ namespace lxl {
         f.clear();
     }
 
+    template<typename T>
+    void load(const std::string &fileName, std::vector<std::vector<T>> &data) {
+        std::ifstream f;
+
+        std::string delimiter;
+        detectDelimiter(fileName,&delimiter);
+
+        try {
+            f.open(fileName);
+        } catch (std::system_error &e) {
+            std::cerr << e.code().message() << std::endl;
+        }
+
+        if (f.is_open()) {
+            std::string line;
+            while (getline(f, line)) {
+                matrixString1D stringData = explode(delimiter, trim_copy(line));
+                std::vector<T> tempVec;
+                convert(stringData, tempVec);
+                data.push_back(tempVec);
+            }
+            f.close();
+        } else {
+            throw std::system_error(errno, std::system_category(), "Failed to open " + fileName);
+        }
+
+        f.clear();
+    }
+
     template<typename T1, typename T2>
-    void fetchData(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
+    void load(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
         std::ifstream f;
 
         try {
@@ -70,7 +99,7 @@ namespace lxl {
     }
 
     template<typename T1, typename T2>
-    void fetchDataGzip(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
+    void loadFromGzip(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
 
         std::ifstream file(fileName, std::ios_base::in | std::ios_base::binary);
 
@@ -100,7 +129,7 @@ namespace lxl {
     }
 
     template<typename T1, typename T2>
-    void fetchDataTranspose(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
+    void loadTranspose(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
         std::ifstream f;
 
         try {
@@ -136,7 +165,7 @@ namespace lxl {
     }
 
     template<typename T1, typename T2>
-    void fetchDataTransposeGzip(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
+    void loadTransposeFromGzip(const std::string &fileName, std::vector<std::vector<T1>> &data, const T2 delimiter) {
         std::ifstream file(fileName, std::ios_base::in | std::ios_base::binary);
 
         if (file.is_open()) {
@@ -173,4 +202,4 @@ namespace lxl {
         file.clear();
     }
 }
-#endif //lxl_UTILS_FETCHDATA_H
+#endif //lxl_UTILS_LOAD_H
