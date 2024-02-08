@@ -417,11 +417,11 @@ namespace lxl {
         return result;
     }
 
-/**
- * Calculates the distance between two coordinate vectors.
- */
+    /**
+     * Calculates the distance between two coordinate vectors.
+     */
     template<typename T>
-    T calculateDistance(std::vector<T> coordVec1, std::vector<T> coordVec2) {
+    T distance(std::vector<T> coordVec1, std::vector<T> coordVec2) {
         std::vector<T> temp;
 
         for (uzi i = 0; i < coordVec1.size(); i++) {
