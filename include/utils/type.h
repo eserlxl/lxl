@@ -11,21 +11,45 @@ namespace lxl {
 
     typedef std::vector<std::string> matrixString1D;
     typedef std::vector<matrixString1D> matrixString2D;
+    typedef std::vector<matrixString2D> matrixString3D;
+    typedef std::vector<matrixString3D> matrixString4D;
+    typedef std::vector<matrixString4D> matrixString5D;
+    typedef std::vector<matrixString5D> matrixString6D;
 
     typedef std::vector<uzi> matrixUzi1D;
     typedef std::vector<matrixUzi1D> matrixUzi2D;
+    typedef std::vector<matrixUzi2D> matrixUzi3D;
+    typedef std::vector<matrixUzi3D> matrixUzi4D;
+    typedef std::vector<matrixUzi4D> matrixUzi5D;
+    typedef std::vector<matrixUzi5D> matrixUzi6D;
 
     typedef std::vector<int> matrixInt1D;
     typedef std::vector<matrixInt1D> matrixInt2D;
+    typedef std::vector<matrixInt2D> matrixInt3D;
+    typedef std::vector<matrixInt3D> matrixInt4D;
+    typedef std::vector<matrixInt4D> matrixInt5D;
+    typedef std::vector<matrixInt5D> matrixInt6D;
 
     typedef std::vector<float> matrixFloat1D;
     typedef std::vector<matrixFloat1D> matrixFloat2D;
+    typedef std::vector<matrixFloat2D> matrixFloat3D;
+    typedef std::vector<matrixFloat3D> matrixFloat4D;
+    typedef std::vector<matrixFloat4D> matrixFloat5D;
+    typedef std::vector<matrixFloat5D> matrixFloat6D;
 
     typedef std::vector<double> matrixDouble1D;
     typedef std::vector<matrixDouble1D> matrixDouble2D;
+    typedef std::vector<matrixDouble2D> matrixDouble3D;
+    typedef std::vector<matrixDouble3D> matrixDouble4D;
+    typedef std::vector<matrixDouble4D> matrixDouble5D;
+    typedef std::vector<matrixDouble5D> matrixDouble6D;
 
     typedef std::vector<long double> matrixLongDouble1D;
     typedef std::vector<matrixLongDouble1D> matrixLongDouble2D;
+    typedef std::vector<matrixLongDouble2D> matrixLongDouble3D;
+    typedef std::vector<matrixLongDouble3D> matrixLongDouble4D;
+    typedef std::vector<matrixLongDouble4D> matrixLongDouble5D;
+    typedef std::vector<matrixLongDouble5D> matrixLongDouble6D;
 
     template<class A>
     std::string type(const A &) {
